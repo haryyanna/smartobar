@@ -1,0 +1,49 @@
+<svg width="1200" height="780" viewBox="0 0 1200 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="128" y1="72" x2="1054" y2="702" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAFDF2"/>
+      <stop offset="0.55" stop-color="#EEF7DE"/>
+      <stop offset="1" stop-color="#D8ECC2"/>
+    </linearGradient>
+    <linearGradient id="pack" x1="344" y1="162" x2="824" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EAF4D7"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8CC63F"/>
+      <stop offset="1" stop-color="#2F6B3B"/>
+    </linearGradient>
+    <filter id="shadow" x="240" y="100" width="700" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="32" flood-color="#234F2C" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="780" rx="48" fill="url(#bg)"/>
+  <circle cx="190" cy="148" r="102" fill="#DFF1BD"/>
+  <circle cx="1030" cy="646" r="122" fill="#D1E8A0"/>
+  <circle cx="984" cy="134" r="82" fill="#EEF7DE"/>
+  <path d="M174 556C236 445 338 372 464 332" stroke="#90C845" stroke-width="26" stroke-linecap="round" opacity="0.55"/>
+  <path d="M861 261C914 313 949 383 972 462" stroke="#6FA24D" stroke-width="24" stroke-linecap="round" opacity="0.4"/>
+  <g filter="url(#shadow)">
+    <rect x="306" y="148" width="528" height="388" rx="42" transform="rotate(6 306 148)" fill="url(#pack)"/>
+    <rect x="350" y="190" width="444" height="298" rx="28" transform="rotate(6 350 190)" fill="#F8FCF0"/>
+    <rect x="384" y="228" width="198" height="214" rx="28" transform="rotate(6 384 228)" fill="url(#bar)"/>
+    <rect x="601" y="246" width="133" height="146" rx="24" transform="rotate(6 601 246)" fill="#F2F9E6" stroke="#D1E8A0" stroke-width="4"/>
+    <rect x="626" y="269" width="82" height="98" rx="18" transform="rotate(6 626 269)" fill="#D7ECAF"/>
+  </g>
+  <path d="M424 252C448 289 486 317 536 338" stroke="#F7FCEB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M450 224C490 261 530 286 575 302" stroke="#DDF0B7" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="525" cy="374" r="18" fill="#F4E2A1"/>
+  <circle cx="484" cy="392" r="14" fill="#F4E2A1"/>
+  <circle cx="448" cy="348" r="15" fill="#F4E2A1"/>
+  <circle cx="546" cy="419" r="13" fill="#F4E2A1"/>
+  <circle cx="649" cy="321" r="26" fill="#8CC63F"/>
+  <path d="M645 302C626 314 616 333 618 352C638 347 656 336 669 320" fill="#6FA24D"/>
+  <path d="M672 324C660 308 641 297 618 294C625 315 643 329 672 324" fill="#B7D97C"/>
+  <text x="432" y="278" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" transform="rotate(6 432 278)">Energy Bar</text>
+  <text x="422" y="316" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="23" font-weight="600" transform="rotate(6 422 316)">Daun Jinten</text>
+  <text x="422" y="470" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="20" font-weight="500" transform="rotate(6 422 470)">Energy bar tinggi serat</text>
+  <text x="104" y="134" fill="#2F6B3B" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700">Praktis</text>
+  <text x="92" y="168" fill="#4E7C45" font-family="Poppins, Arial, sans-serif" font-size="20" font-weight="500">untuk ritme makan aktif</text>
+  <text x="868" y="628" fill="#2F6B3B" font-family="Poppins, Arial, sans-serif" font-size="30" font-weight="700">Jinten</text>
+  <text x="862" y="666" fill="#4E7C45" font-family="Poppins, Arial, sans-serif" font-size="20" font-weight="500">pangan lokal fungsional</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="104" y1="90" x2="674" y2="704" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAFDF3"/>
+      <stop offset="1" stop-color="#E7F3D4"/>
+    </linearGradient>
+    <linearGradient id="pack" x1="260" y1="154" x2="542" y2="602" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5E8D43"/>
+      <stop offset="1" stop-color="#2F6B3B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="44" fill="url(#bg)"/>
+  <circle cx="154" cy="152" r="90" fill="#DFF0C0"/>
+  <circle cx="650" cy="646" r="102" fill="#D2E8A1"/>
+  <rect x="262" y="146" width="284" height="506" rx="44" transform="rotate(8 262 146)" fill="url(#pack)"/>
+  <rect x="286" y="178" width="238" height="440" rx="34" transform="rotate(8 286 178)" fill="#F8FCF0" fill-opacity="0.16"/>
+  <path d="M329 240C362 273 404 296 456 312" stroke="#F7FCEB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M345 205C387 240 429 261 477 275" stroke="#DCEEB9" stroke-width="10" stroke-linecap="round"/>
+  <rect x="142" y="520" width="208" height="84" rx="42" fill="#FFFFFF" fill-opacity="0.94"/>
+  <text x="174" y="574" fill="#2F6B3B" font-family="Poppins, Arial, sans-serif" font-size="29" font-weight="700">Choco Seed</text>
+  <text x="308" y="316" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" transform="rotate(8 308 316)">Energy Bar</text>
+  <text x="298" y="358" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="23" font-weight="600" transform="rotate(8 298 358)">Daun Jinten</text>
+  <text x="324" y="470" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="500" transform="rotate(8 324 470)">Cokelat dan biji-bijian</text>
+  <circle cx="596" cy="246" r="16" fill="#7C4B26"/>
+  <circle cx="629" cy="282" r="18" fill="#8A542B"/>
+  <circle cx="596" cy="314" r="15" fill="#6D3F1D"/>
+  <circle cx="628" cy="346" r="16" fill="#8C572E"/>
+  <path d="M152 430C190 378 232 342 290 310" stroke="#87C14B" stroke-width="24" stroke-linecap="round" opacity="0.45"/>
+</svg>

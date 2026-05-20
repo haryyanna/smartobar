@@ -1,0 +1,487 @@
+/**
+ * NATURAL BEAUTY - LIPSTIK BAHAN ALAMI
+ * Main JavaScript File
+ */
+
+// ========================================
+// PRODUCT DATA
+// ========================================
+const productData = {
+    mint: {
+        name: 'Mint Fresh',
+        variant: 'Mint',
+        description: 'Lipstik dengan ekstrak daun mint yang memberikan sensasi segar dan dingin pada bibir. Membuat bibir terasa lembap dan nyaman sepanjang hari. Formula khusus ini mengandung peppermint oil murni yang memberikan efek cooling sensation saat diaplikasikan.',
+        benefits: [
+            'Sensasi segar dan dingin yang menyenangkan',
+            'Melembabkan bibir kering dan pecah-pecah',
+            'Menenangkan bibir yang iritasi',
+            'Aroma mint yang menyegarkan',
+            'Tahan lama hingga 8 jam'
+        ],
+        ingredients: 'Peppermint Oil, Beeswax, Coconut Oil, Vitamin E, Shea Butter',
+        image: 'images/lipstik-mint.jpg',
+        color: '#7CB342',
+        price: 'Rp 89.000'
+    },
+    cocoa: {
+        name: 'Cocoa Rich',
+        variant: 'Cocoa',
+        description: 'Lipstik dengan kandungan cocoa butter yang kaya akan antioksidan. Memberikan warna natural coklat yang elegan dan merawat kelembapan bibir. Cocoa butter alami membantu melindungi bibir dari kekeringan.',
+        benefits: [
+            'Warna natural coklat yang elegan',
+            'Rich antioxidant dari cocoa butter',
+            'Tekstur creamy yang mudah diaplikasikan',
+            'Melindungi bibir dari kekeringan',
+            'Hasil akhir matte yang halus'
+        ],
+        ingredients: 'Cocoa Butter, Jojoba Oil, Vitamin E, Carnauba Wax, Natural Pigments',
+        image: 'images/lipstik-cocoa.jpg',
+        color: '#6B4423',
+        price: 'Rp 95.000'
+    },
+    telang: {
+        name: 'Telang Glow',
+        variant: 'Telang',
+        description: 'Lipstik dengan ekstrak bunga telang yang memberikan warna pink natural. Kaya akan antioksidan dan membantu mencerahkan warna bibir. Bunga telang (butterfly pea) telah digunakan sejak zaman dahulu untuk perawatan kecantikan.',
+        benefits: [
+            'Warna pink natural yang cantik',
+            'Mencerahkan warna bibir secara alami',
+            'Antioksidan tinggi dari bunga telang',
+            'Membantu merawat kesehatan bibir',
+            'Efek glowing yang subtle'
+        ],
+        ingredients: 'Butterfly Pea Extract, Sweet Almond Oil, Vitamin E, Rosehip Oil',
+        image: 'images/lipstik-telang.jpg',
+        color: '#1E3A5F',
+        price: 'Rp 99.000'
+    }
+};
+
+// ========================================
+// NAVIGATION
+// ========================================
+function initNavigation() {
+    const navbar = document.getElementById('navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    
+    mobileMenu.classList.toggle('active');
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// ========================================
+// WELCOME POPUP
+// ========================================
+function initWelcomePopup() {
+    const popup = document.getElementById('welcomePopup');
+    
+    // Show popup after 1 second
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 1000);
+}
+
+function closePopup() {
+    const popup = document.getElementById('welcomePopup');
+    popup.classList.remove('active');
+}
+
+// Close popup when clicking outside
+document.addEventListener('click', (e) => {
+    const popup = document.getElementById('welcomePopup');
+    const content = popup.querySelector('.popup-content');
+    
+    if (popup.classList.contains('active') && !content.contains(e.target) && !e.target.closest('.popup-content')) {
+        closePopup();
+    }
+});
+
+// ========================================
+// SCROLL ANIMATIONS
+// ========================================
+function initScrollAnimations() {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOnScroll = () => {
+        revealElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('active');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Initial check
+}
+
+// ========================================
+// PRODUCT MODAL
+// ========================================
+function showProductDetail(productKey) {
+    const product = productData[productKey];
+    if (!product) return;
+    
+    const modal = document.getElementById('productModal');
+    const modalBody = document.getElementById('modalBody');
+    
+    modalBody.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="modal-image">
+        <div class="modal-variant" style="background: ${product.color}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+            </svg>
+            ${product.variant}
+        </div>
+        <h2 class="modal-title">${product.name}</h2>
+        <p class="modal-description">${product.description}</p>
+        
+        <div class="modal-benefits">
+            <h4>Manfaat Utama:</h4>
+            <ul>
+                ${product.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+            </ul>
+        </div>
+        
+        <div class="modal-benefits">
+            <h4>Bahan Utama:</h4>
+            <p style="font-size: 0.875rem; color: var(--coklat-tua);">${product.ingredients}</p>
+        </div>
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="font-size: 1.25rem; font-weight: 700; color: var(--coklat);">${product.price}</span>
+            <span style="font-size: 0.875rem; color: var(--hijau-mint);">Stok Tersedia</span>
+        </div>
+        
+        <button class="modal-btn" style="background: ${product.color}" onclick="showComingSoon()">
+            Pesan Sekarang
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px; display: inline; vertical-align: middle;">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </button>
+    `;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('productModal');
+    const content = modal.querySelector('.modal-content');
+    
+    if (modal.classList.contains('active') && e.target === modal) {
+        closeModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+        closePopup();
+    }
+});
+
+// ========================================
+// TOAST NOTIFICATION
+// ========================================
+function showComingSoon() {
+    const toast = document.getElementById('toast');
+    
+    toast.classList.add('active');
+    
+    setTimeout(() => {
+        toast.classList.remove('active');
+    }, 3000);
+}
+
+// ========================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
+
+// ========================================
+// PARALLAX EFFECT FOR HERO DECORATIONS
+// ========================================
+function initParallax() {
+    const leaf1 = document.querySelector('.leaf-1');
+    const leaf2 = document.querySelector('.leaf-2');
+    const leaf3 = document.querySelector('.leaf-3');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        if (leaf1) leaf1.style.transform = `translateY(${scrolled * 0.1}px)`;
+        if (leaf2) leaf2.style.transform = `translateY(${scrolled * 0.15}px)`;
+        if (leaf3) leaf3.style.transform = `translateY(${scrolled * 0.08}px)`;
+    });
+}
+
+// ========================================
+// NAVBAR LINK ACTIVE STATE
+// ========================================
+function initActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+// ========================================
+// PRODUCT CARD HOVER EFFECT
+// ========================================
+function initProductCardEffects() {
+    const cards = document.querySelectorAll('.product-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+    });
+}
+
+// ========================================
+// COUNTER ANIMATION
+// ========================================
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString();
+        }
+    }, 16);
+}
+
+// ========================================
+// LAZY LOADING IMAGES
+// ========================================
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// ========================================
+// FORM VALIDATION (if needed)
+// ========================================
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    return re.test(phone);
+}
+
+// ========================================
+// LOCAL STORAGE FUNCTIONS
+// ========================================
+function setLocalStorage(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+        console.warn('LocalStorage not available');
+    }
+}
+
+function getLocalStorage(key) {
+    try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+    } catch (e) {
+        console.warn('LocalStorage not available');
+        return null;
+    }
+}
+
+// ========================================
+// CHECK IF POPUP WAS ALREADY SHOWN
+// ========================================
+function checkPopupShown() {
+    const popupShown = getLocalStorage('popupShown');
+    if (!popupShown) {
+        initWelcomePopup();
+        setLocalStorage('popupShown', true);
+    }
+}
+
+// ========================================
+// INITIALIZE ALL FUNCTIONS
+// ========================================
+document.addEventListener('DOMContentLoaded', () => {
+    initNavigation();
+    initScrollAnimations();
+    initParallax();
+    initActiveNavLink();
+    initProductCardEffects();
+    initLazyLoading();
+    
+    // Uncomment line below to show popup only once per session
+    // checkPopupShown();
+    
+    // Comment line below if using checkPopupShown()
+    initWelcomePopup();
+});
+
+// ========================================
+// UTILITY FUNCTIONS
+// ========================================
+
+// Debounce function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Throttle function
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Format currency
+function formatCurrency(amount, currency = 'IDR') {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: currency
+    }).format(amount);
+}
+
+// Format date
+function formatDate(date, options = {}) {
+    const defaultOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+    return new Date(date).toLocaleDateString('id-ID', { ...defaultOptions, ...options });
+}
+
+// Copy to clipboard
+async function copyToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        showComingSoon(); // Show toast as feedback
+    } catch (err) {
+        console.error('Failed to copy:', err);
+    }
+}
+
+// Share function
+function shareContent(title, text, url = window.location.href) {
+    if (navigator.share) {
+        navigator.share({ title, text, url });
+    } else {
+        copyToClipboard(url);
+    }
+}
+
+// ========================================
+// EXPORT FUNCTIONS FOR GLOBAL ACCESS
+// ========================================
+window.scrollToTop = scrollToTop;
+window.scrollToSection = scrollToSection;
+window.toggleMobileMenu = toggleMobileMenu;
+window.closePopup = closePopup;
+window.showProductDetail = showProductDetail;
+window.closeModal = closeModal;
+window.showComingSoon = showComingSoon;

@@ -1,0 +1,28 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="92" y1="86" x2="650" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFDF3"/>
+      <stop offset="1" stop-color="#EDF7DE"/>
+    </linearGradient>
+    <linearGradient id="pack" x1="244" y1="164" x2="582" y2="598" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DB546"/>
+      <stop offset="1" stop-color="#4E7C45"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="44" fill="url(#bg)"/>
+  <circle cx="674" cy="136" r="86" fill="#E6F2D9"/>
+  <circle cx="126" cy="658" r="94" fill="#D4E9A7"/>
+  <rect x="246" y="160" width="318" height="470" rx="46" transform="rotate(-11 246 160)" fill="url(#pack)"/>
+  <rect x="272" y="192" width="268" height="406" rx="32" transform="rotate(-11 272 192)" fill="#F6FAEF" fill-opacity="0.18"/>
+  <path d="M330 266C363 298 409 322 459 339" stroke="#F7FCEB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M315 228C355 259 396 281 454 298" stroke="#D8ECC2" stroke-width="10" stroke-linecap="round"/>
+  <path d="M587 502C628 490 657 460 666 420C632 424 602 447 587 502Z" fill="#F2CD58"/>
+  <path d="M566 482C604 472 633 446 645 410" stroke="#E3A81C" stroke-width="14" stroke-linecap="round"/>
+  <ellipse cx="188" cy="242" rx="54" ry="42" fill="#E9D8A6"/>
+  <path d="M161 242C176 222 201 216 224 223C211 252 188 266 161 242Z" fill="#D6B76D"/>
+  <rect x="430" y="566" width="188" height="82" rx="41" fill="#FFFFFF" fill-opacity="0.94"/>
+  <text x="454" y="618" fill="#3D6B34" font-family="Poppins, Arial, sans-serif" font-size="29" font-weight="700">Banana Oat</text>
+  <text x="286" y="318" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" transform="rotate(-11 286 318)">Energy Bar</text>
+  <text x="272" y="360" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="23" font-weight="600" transform="rotate(-11 272 360)">Daun Jinten</text>
+  <text x="294" y="472" fill="#F7FCEB" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="500" transform="rotate(-11 294 472)">Pisang dan oat</text>
+</svg>

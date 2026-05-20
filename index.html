@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMARTOBAR Daun Jinten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/ ">
+    <link rel="preconnect" href="https://fonts.gstatic.com/ " crossorigin="">
+    <link href="./Natural Beauty - Lipstik Bahan Alami_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Natural Beauty - Lipstik Bahan Alami_files/style.css">
+    <style>
+        /* logo image styling */
+        .navbar {
+            padding: 10px 0 !important;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0 !important;
+        }
+
+        .nav-container {
+            padding: 0 18px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: auto;
+            object-fit: contain;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            display: block;
+        }
+
+        .nav-logo {
+            gap: 0;
+        }
+
+        .nav-logo .logo-text,
+        .footer-logo-text {
+            display: none;
+        }
+
+        .nav-logo:hover .logo-icon {
+            transform: none;
+        }
+
+        .footer-logo-icon {
+            width: auto;
+            height: auto;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 0;
+        }
+
+        .footer-logo-icon img {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .mobile-menu-btn {
+            background: transparent !important;
+            width: 34px;
+            height: 34px;
+        }
+
+        #menuIcon {
+            width: 24px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .popup-icon-wrapper {
+            margin-bottom: 12px;
+        }
+
+        .popup-icon-glow {
+            display: none;
+        }
+
+        .popup-icon {
+            width: auto;
+            height: auto;
+            background: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-icon img {
+            display: block;
+            width: 92px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .featured-product-slot {
+            width: 100%;
+            max-width: 860px;
+            margin: 28px auto 28px;
+            padding: 18px;
+            border: 2px dashed rgba(58, 102, 55, 0.22);
+            border-radius: 34px;
+            background: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 18px 40px rgba(86, 120, 63, 0.08);
+        }
+
+        .featured-product-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 360px;
+            padding: 18px 22px;
+            border-radius: 28px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(250, 253, 242, 0.95), rgba(234, 244, 215, 0.95));
+        }
+
+        .featured-product-frame img {
+            width: 100%;
+            max-width: 760px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .featured-product-caption {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 0.92rem;
+            color: rgba(47, 73, 38, 0.82);
+            line-height: 1.6;
+        }
+
+        .product-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin: 10px auto 28px;
+        }
+
+        .product-proof-card {
+            padding: 20px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(126, 161, 92, 0.18);
+            box-shadow: 0 14px 34px rgba(93, 124, 68, 0.08);
+        }
+
+        .product-proof-title {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #376b37;
+        }
+
+        .product-proof-text {
+            margin: 0;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: rgba(47, 73, 38, 0.86);
+        }
+
+        @media (max-width: 640px) {
+            .featured-product-slot {
+                margin: 22px auto 16px;
+                padding: 12px;
+                border-radius: 22px;
+            }
+
+            .featured-product-frame {
+                min-height: 220px;
+                padding: 12px;
+                border-radius: 18px;
+            }
+
+            .featured-product-frame img {
+                max-width: 100%;
+            }
+
+            .product-proof-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .product-proof-card {
+                padding: 16px;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <!-- replace src with your own logo file -->
+                <img class="logo-icon" src="logo daun jinten.png" alt="SMARTOBAR Daun Jinten logo" />
+                <div class="logo-text">
+                    <span class="logo-main">SMARTOBAR Daun Jinten</span>
+                    <span class="logo-sub">Energy Bar Indonesia</span>
+                </div>
+            </a>
+
+
+            <a class="nav-cta" href="https://wa.me/6285964115243" target="_blank" rel="noopener">Diskusikan Produk</a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+                        <img id="menuIcon" src="logo daun jinten.png" alt="Menu" width="24" height="24" />
+                <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg " width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" class="mobile-link"
+                onclick="scrollToTop(); toggleMobileMenu()">Beranda</a>
+            <a href="#products" class="mobile-link"
+                onclick="scrollToSection(&#39;products&#39;); toggleMobileMenu()">Tentang Produk</a>
+            <a href="#footer" class="mobile-link"
+                onclick="scrollToSection(&#39;footer&#39;); toggleMobileMenu()">Kontak</a>
+            <a class="nav-cta" href="https://wa.me/6285964115243" target="_blank" rel="noopener">Diskusikan Produk</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Popup -->
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">
+                <svg xmlns="http://www.w3.org/2000/svg " width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <div class="popup-header">
+                <div class="popup-icon-wrapper">
+                    <div class="popup-icon-glow"></div>
+                    <div class="popup-icon">
+                        <img src="logo daun jinten.png" alt="SMARTOBAR Daun Jinten" width="32" height="32" />
+                    </div>
+                </div>
+                <h2 class="popup-title">Selamat Datang!</h2>
+                <p class="popup-subtitle">
+                    <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                        </path>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                    </svg>
+                    SMARTOBAR Daun Jinten
+                    <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                        </path>
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                    </svg>
+                </p>
+                <p class="popup-description">Konsep SMARTOBAR Daun Jinten yang praktis, tinggi serat, dan dirancang sebagai solusi camilan fungsional untuk membantu menjaga ritme makan tetap teratur.</p>
+            </div>
+
+            <div class="popup-features">
+                <div class="popup-feature">
+                    <div class="feature-icon green">
+                        <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                            </path>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-title">Bahan Lokal Fungsional</p>
+                        <p class="feature-desc">Daun jinten, sorgum, pisang, dan pemanis alami dalam format snack bar</p>
+                    </div>
+                </div>
+                <div class="popup-feature">
+                    <div class="feature-icon blue">
+                        <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-title">Masih Tahap Konsep Produk</p>
+                        <p class="feature-desc">Dirancang untuk pelajar, pekerja aktif, dan ibu menyusui</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="popup-btn" onclick="closePopup()">Mulai Eksplorasi</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- Decorative Elements -->
+        <div class="hero-decoration">
+            <div class="floating-leaf leaf-1">
+                <svg xmlns="http://www.w3.org/2000/svg " width="80" height="80" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+            </div>
+            <div class="floating-leaf leaf-2">
+                <svg xmlns="http://www.w3.org/2000/svg " width="64" height="64" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+            </div>
+            <div class="floating-leaf leaf-3">
+                <svg xmlns="http://www.w3.org/2000/svg " width="56" height="56" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+            </div>
+            <div class="gradient-circle circle-1"></div>
+            <div class="gradient-circle circle-2"></div>
+            <div class="gradient-circle circle-3"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <div class="hero-badge reveal active">
+                        <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                            </path>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                        </svg>
+                        <span>Konsep Inovasi Pangan Lokal Fungsional</span>
+                    </div>
+
+                    <h1 class="hero-title reveal active">
+                        Energy Bar
+                        <span class="text-gradient">Daun Jinten</span>
+                    </h1>
+                    <p class="hero-subtitle reveal active">Konsep camilan praktis untuk membantu mencegah telat makan dan mendukung kesehatan pencernaan</p>
+
+                    <p class="hero-description reveal active">
+                        SMARTOBAR Daun Jinten merupakan <span class="text-mint">konsep produk</span> snack bar berbasis
+                        <span class="text-cocoa">daun jinten</span>, <span class="text-telang">sorgum</span>, dan pisang
+                        yang dirancang portable, mengenyangkan, dan lebih mudah diterima sebagai camilan sehat berbasis bahan lokal Indonesia.
+                    </p>
+
+                    <div class="hero-features reveal active">
+                        <div class="hero-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z">
+                                </path>
+                            </svg>
+                            <span>Membantu mencegah telat makan</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>
+                            <span>Daun jinten sebagai pembeda utama</span>
+                        </div>
+                        <div class="hero-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                </path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                            <span>Masih tahap konsep pengembangan</span>
+                        </div>
+                    </div>
+
+                    <button class="hero-cta reveal active" onclick="scrollToSection(&#39;products&#39;)">
+                        Lihat Konsep Produk
+                        <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Right Content - Hero Image -->
+                <div class="hero-image-wrapper reveal active">
+                    <div class="hero-image-glow"></div>
+                    <div class="hero-image">
+                        <img src="produk1.png" alt="Ilustrasi produk SMARTOBAR Daun Jinten">
+                        <div class="hero-image-overlay"></div>
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="floating-badge badge-organic">
+                        <div class="badge-icon green">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                </path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <p class="badge-title">Bahan lokal</p>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-customers">
+                        <div class="badge-icon blue">
+                            <svg xmlns="http://www.w3.org/2000/svg " width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="badge-text">
+                            <p class="badge-title">140-180 kkal</p>
+                            <p class="badge-sub">Estimasi energi per bar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" onclick="scrollToSection(&#39;products&#39;)">
+            <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Product Overview Section -->
+    <section class="products" id="products">
+        <!-- Background decorations -->
+        <div class="products-decoration">
+            <div class="decor-circle circle-green"></div>
+            <div class="decor-circle circle-blue"></div>
+            <div class="decor-circle circle-brown"></div>
+        </div>
+
+        <div class="products-container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <div class="section-badge reveal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                        </path>
+                    </svg>
+                    <span>Tentang Produk</span>
+                </div>
+
+                <h2 class="section-title reveal">SMARTOBAR Daun Jinten untuk Aktivitas Harian</h2>
+
+                <p class="section-description reveal">
+                    SMARTOBAR Daun Jinten adalah konsep camilan fungsional berbasis bahan lokal yang dirancang
+                    praktis, mengenyangkan, dan mudah diterima. Produk ini masih berada pada tahap konsep pengembangan
+                    dengan fokus pada nilai gizi, kemudahan konsumsi, dan diferensiasi bahan lokal.
+                </p>
+            </div>
+
+            <div class="product-proof-grid reveal">
+                <div class="product-proof-card">
+                    <h3 class="product-proof-title">Status Produk</h3>
+                    <p class="product-proof-text">Saat ini SMARTOBAR Daun Jinten ditampilkan sebagai konsep produk dan visual pengembangan, sehingga halaman ini berfokus pada gagasan, manfaat, dan potensi pasarnya.</p>
+                </div>
+                <div class="product-proof-card">
+                    <h3 class="product-proof-title">Mengapa Daun Jinten?</h3>
+                    <p class="product-proof-text">Daun jinten dipilih karena dikenal sebagai bahan lokal fungsional yang memberi nilai pembeda, terutama ketika dipadukan dengan format snack bar yang lebih praktis dan modern.</p>
+                </div>
+                <div class="product-proof-card">
+                    <h3 class="product-proof-title">Nilai Utama</h3>
+                    <p class="product-proof-text">Produk ini menggabungkan kemudahan konsumsi, potensi dukungan serat dan senyawa bioaktif, serta peluang positioning sebagai camilan sehat berbasis bahan lokal Indonesia.</p>
+                </div>
+            </div>
+
+            <div class="featured-product-slot reveal">
+                <div class="featured-product-frame">
+                    <img src="poster produk.png" alt="Gambar utama SMARTOBAR Daun Jinten">
+                </div>
+                <p class="featured-product-caption">Visual utama ini menampilkan konsep kemasan, komposisi bahan, manfaat utama, dan target konsumen untuk membantu pengunjung memahami produk secara cepat.</p>
+            </div>
+
+            <!-- Product Overview Grid -->
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-card-inner">
+                        <div class="product-badge original">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                                </path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                            <span>Manfaat Utama</span>
+                        </div>
+
+                        <div class="product-image-wrapper">
+                            <div class="product-image-glow original"></div>
+                            <div class="product-image">
+                                <img src="manfaat.png" alt="Ilustrasi SMARTOBAR Daun Jinten">
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <h3 class="product-name">Camilan Praktis Bernilai Fungsional</h3>
+                            <p class="product-description">Konsep produk ini diarahkan sebagai camilan pendamping aktivitas yang praktis dibawa, membantu mengisi jeda makan, dan memberi nilai tambah dibanding snack biasa.</p>
+
+                            <div class="product-benefits">
+                                <span class="benefit-tag">Praktis dibawa</span>
+                                <span class="benefit-tag">Penyangga energi</span>
+                                <span class="benefit-tag">Nilai fungsional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="product-card-inner">
+                        <div class="product-badge banana">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                                </path>
+                            </svg>
+                            <span>Bahan Utama</span>
+                        </div>
+
+                        <div class="product-image-wrapper">
+                            <div class="product-image-glow banana"></div>
+                            <div class="product-image">
+                                <img src="bahan utama.png" alt="Konsep produk SMARTOBAR Daun Jinten">
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <h3 class="product-name">Daun Jinten Dipadukan dengan Bahan Familiar</h3>
+                            <p class="product-description">Formulasi konsep memadukan daun jinten dengan sorgum, pisang, dan pemanis alami agar bahan fungsional lokal hadir dalam cita rasa yang lebih dekat dengan preferensi konsumen.</p>
+
+                            <div class="product-benefits">
+                                <span class="benefit-tag">Daun jinten</span>
+                                <span class="benefit-tag">Sorgum lokal</span>
+                                <span class="benefit-tag">Pisang alami</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal">
+                    <div class="product-card-inner">
+                        <div class="product-badge choco">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z">
+                                </path>
+                            </svg>
+                            <span>Siapa yang Cocok</span>
+                        </div>
+
+                        <div class="product-image-wrapper">
+                            <div class="product-image-glow choco"></div>
+                            <div class="product-image">
+                                <img src="siapa yang cocok.png" alt="Visual konsep SMARTOBAR Daun Jinten">
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <h3 class="product-name">Relevan untuk Ritme Hidup Sibuk</h3>
+                            <p class="product-description">Arah target konsumennya adalah pelajar, mahasiswa, pekerja aktif, hingga ibu menyusui yang membutuhkan camilan praktis, mudah dibawa, dan memiliki nilai tambah fungsional.</p>
+
+                            <div class="product-benefits">
+                                <span class="benefit-tag">Pelajar & mahasiswa</span>
+                                <span class="benefit-tag">Pekerja aktif</span>
+                                <span class="benefit-tag">Ibu menyusui</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom CTA -->
+            <div class="products-cta reveal">
+                <div class="cta-box">
+                    <div class="cta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z">
+                            </path>
+                            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                        </svg>
+                    </div>
+                    
+                    <div class="cta-text">
+                        <p class="cta-title">Ingin mendiskusikan konsep, pengembangan, atau potensi pasar produk ini?</p>
+                        <p class="cta-sub">Hubungi kami untuk membahas lebih lanjut mengenai gagasan produk, positioning, manfaat utama, dan peluang pengembangan SMARTOBAR Daun Jinten.</p>
+                    </div>
+                    <a href="https://wa.me/6285964115243" target="_blank" rel="noopener" class="cta-btn">
+                        Diskusikan Sekarang
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <!-- Decorative elements -->
+        <div class="footer-decoration">
+            <div class="footer-circle circle-1"></div>
+            <div class="footer-circle circle-2"></div>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="footer-logo-icon">
+                                <img src="logo daun jinten.png" alt="SMARTOBAR Daun Jinten logo" />
+                            </div>
+                            <div class="footer-logo-text">
+                                <h3>SMARTOBAR Daun Jinten</h3>
+                                <p>Energy Bar Indonesia</p>
+                            </div>
+                        </div>
+                        <p class="footer-desc">
+                            Konsep SMARTOBAR fungsional berbasis daun jinten yang dirancang untuk membantu menjaga ritme makan, menonjolkan bahan lokal Indonesia, dan menawarkan nilai diferensiasi yang kuat.
+                        </p>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4 class="footer-title">
+                            <span class="title-line"></span>
+                            Hubungi Kami
+                        </h4>
+                        <ul class="contact-list">
+                            <li>
+                                <a href="https://wa.me/6285964115243" class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-text">
+                                        <p class="contact-label">Telepon</p>
+                                        <p class="contact-value">+62 859-6411-5243 (Merry)</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg " width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="contact-text">
+                                        <p class="contact-label">Alamat</p>
+                                        <p class="contact-value">Gianyar, Bali</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2026 SMARTOBAR Daun Jinten. Dibuat untuk inovasi gizi berkelanjutan untuk pola makan sehat masyarakat Indonesia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+
+            if (!mobileMenu || !menuIcon || !closeIcon) return;
+
+            mobileMenu.classList.toggle('active');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('welcomePopup');
+            if (popup) {
+                popup.classList.remove('active');
+            }
+        }
+
+        function initNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+
+            const updateNavbar = () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 100);
+            };
+
+            window.addEventListener('scroll', updateNavbar);
+            updateNavbar();
+        }
+
+        function initWelcomePopup() {
+            const popup = document.getElementById('welcomePopup');
+            if (!popup) return;
+
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 800);
+
+            popup.addEventListener('click', (event) => {
+                const content = popup.querySelector('.popup-content');
+                if (content && !content.contains(event.target)) {
+                    closePopup();
+                }
+            });
+        }
+
+        function initRevealOnScroll() {
+            const revealElements = document.querySelectorAll('.reveal');
+            if (!revealElements.length) return;
+
+            const reveal = () => {
+                revealElements.forEach((element) => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 80) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', reveal);
+            reveal();
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initNavbarScroll();
+            initWelcomePopup();
+            initRevealOnScroll();
+        });
+    </script>
+</body>
+
+</html>
